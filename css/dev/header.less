@@ -1,0 +1,176 @@
+.header {
+	// меню в хедере
+	&__menu {
+		margin: 19px 0 22px; 
+	}
+	&__menu-list {
+		margin-left: 10px;
+		padding: 0;
+	}
+	&__menu-item {
+		margin-right: 30px;
+	}
+	&__lang-link,
+	&__menu-link {
+		color: #fff;
+		font-weight: 500;
+		display: inline-block;
+		line-height: 14px;
+		border-bottom: 1px solid #6d6d6d;
+		&.active,
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+	}
+	// смена языка в хедере
+	&__lang {
+		float: right;
+		margin-right: 34px;
+	}
+	&__lang-link {
+		position: relative;
+		font-weight: 400;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 17px;
+			height: 12px;
+			top: 1px;
+			left: -29px;
+		}
+		&._eng:before {
+			background: url(../img/eng.png) 0 0 no-repeat;
+		}
+		&._rus:before {
+			background: url(../img/rus.png) 0 0 no-repeat;
+		}
+	}
+	// блок управления
+	&__info-block {
+		border-radius: 6px 6px 0 0;
+		background: #fff;
+		box-sizing: border-box;
+		padding: 18px 32px;
+	}
+	// ссылка личного кабинета
+	&__cabinet-link {
+		float: right;
+		color: #000;
+		font-weight: 300;
+		border-bottom: 1px solid #878787;
+		display: inline-block;
+		line-height: 14px;
+		margin: 8px 8px 0 0px;
+		position: relative;
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../img/main_sprite.png) -158px 0 no-repeat;
+			width: 17px;
+			height: 20px;
+			top: -3px;
+            left: -28px;
+		}
+	}
+	// блок ссылок с типами платформ
+	&__platform {
+		display: inline-block;
+		vertical-align: top;
+		margin: 8px 0 0 5.3%;
+	}
+	&__platform-type {
+		position: relative;
+		display: inline-block;
+		line-height: 16px;
+		border-bottom: 1px dotted #000;
+		color: #000;
+		margin-right: 58px;
+		font-family: 'MyriadPro Regular';
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../img/main_sprite.png) 0 0 no-repeat;
+			width: 20px;
+			height: 20px;
+			top: 0px;
+			left: -25px;
+		}
+		&._pc:before {
+			background-position: 0 0;
+		}
+		&._ps:before {
+			background-position: -38px 0px;
+		}
+		&._xb:before {
+			background-position: -83px 1px;
+			top: 0px;
+		}
+	}
+	// блок поиска в хедере
+	&__search {
+		display: inline-block;
+		margin: 0 0 0 -16px;
+		position: relative;
+		width: 39.7%;
+		vertical-align: top;	
+	}
+	&__search-input {
+		box-sizing: border-box!important;
+		border-radius: 40px;
+		border: 1px solid #efefef;
+		padding: 0 34px 0 24px;
+		height: 33px;
+		width: 100%;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		&:focus {
+			box-shadow: 0px 0px 17px -8px #999;
+		}
+	}
+	&__search-submit {
+		position: absolute;
+		background: url(../img/main_sprite.png) -122px 0 no-repeat;
+		width: 16px;
+		height: 16px;
+		top: 7px;
+		right: 15px;
+		border: none;
+	}
+	// алфавит
+	&__alphabet {
+		background: #ece9e2;
+		border-radius: 0 0 6px 6px;
+		padding: 10px;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	&__alphabet-link {
+		display: inline-block;
+		text-transform: uppercase;
+		color: #000;
+		padding: 0 16px;
+		line-height: 21px;
+		position: relative;
+		border-right: 1px solid #dcd9d3;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		&:hover {
+			border-bottom: none;
+		}
+		&:last-child {
+			border-right: none;
+		}
+	}
+}

@@ -1,0 +1,90 @@
+// название игры под шапкой
+.game {
+	&__name-block {
+		text-align: center;
+		padding: 46px 0;
+	}
+	&__name-img {
+		max-height: 42px;
+	}
+	&__bg-img {
+		width: 100%;
+	}
+	&__bg {
+		position: absolute;
+		z-index: 0;
+		left: 0;
+		right: 0;
+		top: 153px;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+// блок слайдера на главной
+.main {
+	&__slider {
+		background: #eb9a00;
+		border: 7px solid #eb9a00;
+		text-align: center;
+		.bx-prev,
+		.bx-next {
+			width: 43px;
+			height: 43px;
+			background: url(../img/main_sprite.png) 0 0 no-repeat;
+			-webkit-transition: background 0.4s ease;
+			-moz-transition: background 0.4s ease;
+			-ms-transition: background 0.4s ease;
+			-o-transition: background 0.4s ease;
+			transition: background 0.4s ease;
+		}
+		.bx-prev {
+			background-position: -303px 0px;
+			&:hover {
+				background-position: -303px -53px;
+			}
+		}
+		.bx-next {
+			background-position: -387px 0px;
+			&:hover {
+				background-position: -387px -53px;
+			}
+		}
+	}
+	&__top-slider {
+		margin: 0;
+		padding: 0;
+	}
+	&__promo {
+		font-family: 'GothamPro Regular';
+		font-size: 18px;
+		color: #fff;
+		position: relative;
+		text-align: center;
+		display: inline-block;
+		&:before {
+			content: '%';
+			font-size: 21px;
+			opacity: 0.7;
+			font-family: 'GothamPro Regular';
+			position: absolute;
+			top: -2px;
+		    left: -33px;
+		}
+	}
+	&__slide {
+		text-align: left;
+	}
+	&__slide-inner {
+		position: absolute;
+		top: 17%;
+		left: 8%;
+		width: 400px;
+	}
+	&__slide-text {
+		opacity: 0.8;
+		line-height: 22px;
+		color: #fff;
+		font-size: 15px;
+		font-weight: 300;
+	}
+}
