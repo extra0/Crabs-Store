@@ -1,5 +1,8 @@
 $(function(){
 
+	// вызов фенсибокса
+	$('.fancy').fancybox();
+
 	//слайдер на главной
 	$('.main__top-slider').bxSlider({
 		speed: 700,

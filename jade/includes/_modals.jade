@@ -1,2 +1,14 @@
-.fancybox-placeholder
-	
+#enter
+	.modal__inner
+		h3.modal__title Вход на сайт
+		form.modal__form(action="#" method="post")
+			input.univ__input._email(type="text" required placeholder="Логин")
+			input.univ__input._email(type="password" required placeholder="Пароль")
+			button.btn._enter(type="submit") Войти
+			a.modal__restore.fancy(href="#restore") Восстановить пароль
+#restore
+	.modal__inner
+		h3.modal__title Восстановить пароль
+		form.modal__form(action="#" method="post")
+			input.univ__input._email(type="text" required placeholder="Ваш email")
+			button.btn._rss-btn(type="submit") Восстановить
