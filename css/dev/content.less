@@ -22,6 +22,11 @@
 }
 // блок слайдера на главной
 .main {
+	&__content {
+		background: #fff;
+		padding: 25px 0;
+		border-radius: 6px;
+	}
 	&__slider {
 		background: #eb9a00;
 		border: 7px solid #eb9a00;
@@ -332,11 +337,11 @@
 		-o-transition: all 0.4s ease;
 		transition: all 0.4s ease;
 		&:hover {
-			-moz-transform: rotate(360deg);
-			-webkit-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
+			// -moz-transform: rotate(360deg);
+			// -webkit-transform: rotate(360deg);
+			// -o-transform: rotate(360deg);
+			// -ms-transform: rotate(360deg);
+			// transform: rotate(360deg);
 		}
 	}
 	&__time {
@@ -385,6 +390,24 @@
 			height: 1px;
 			background: #b6b6b6;
 		}
+	}
+}
+// главный заголовок
+.title {
+	font-size: 37px;
+	font-weight: 300;
+	margin: 0;
+	padding: 10px 0 25px 3.5%;
+	border-bottom: 1px solid #f5f3ef;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background: #faf9f7;
 	}
 }
 // второстепенный заголовок
@@ -673,4 +696,159 @@
 	background: #d57d00;
 	box-sizing: border-box;
 	padding: 20px 30px 30px 30px;
+}
+// хлебные крошки
+.breadcrumps {
+	&__list {
+		margin: 0 0 0 3.5%;
+		padding: 0;
+	}
+	&__item {
+		margin-right: 10px;
+	}
+	&__link {
+		color: #c1c1c1;
+		border-bottom: 1px solid #c5c5c5;
+		display: inline-block;
+		line-height: 14px;
+		position: relative;
+		&:before {
+			content: '-';
+			position: absolute;
+			top: 0;
+			right: -9px;
+		}
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+	}
+	&__current {
+		color: #a1a1a1;
+		margin: 0;
+	}
+}
+// список гарантий 
+.waranty {
+	&__list {
+		padding: 0 62px 0 110px;
+		list-style-type: none;
+	    counter-reset: point;
+	    margin: 0;
+	}
+	&__item {
+		padding: 20px 0 30px 0;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			width: 116.8%;
+			height: 1px;
+			background: #e8e8e8;
+			bottom: 0;
+			left: -110px;
+		}
+		&:before {
+			content: counter(point);
+			counter-increment: point 1;
+			font-size: 16px;
+			position: absolute;
+			left: -65px;
+			top: 33px;
+			padding: 2px 0 4px 0;
+			color: #feb541;
+			font-weight: bold;
+			text-align: center;
+			border-radius: 10px;
+			width: 37px;
+			line-height: 25px;
+			z-index: 2;
+			border: 2px solid #feb541;
+		}
+	}
+	&__question {
+		color: #71706f;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 22px;
+		position: relative;
+		margin: 10px 0 0px 0;
+	}
+	&__link {
+		color: #ec9c00;
+		font-size: 14px;
+		border-bottom: 1px dotted;
+		display: inline-block;
+		line-height: 14px;
+		font-weight: 700;
+		margin-top: 10px;
+		position: relative;
+		-webkit-transition: opacity 0.4s ease;
+		-moz-transition: opacity 0.4s ease;
+		-ms-transition: opacity 0.4s ease;
+		-o-transition: opacity 0.4s ease;
+		transition: opacity 0.4s ease;
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+		&.hidden {
+			opacity: 0;
+			z-index: -10;
+		}
+	}
+	&__answer {
+		margin: 0 -62px -30px -110px;
+		padding: 20px 85px 20px 45px;
+		background: #ec9c00;
+		position: relative;
+		line-height: 22px;
+		font-size: 16px;
+		font-weight: 300;
+		display: none;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: 53px;
+			top: -12px;
+			border-left: 13px solid transparent;
+			border-right: 13px solid transparent;
+			border-bottom: 13px solid #ec9c00;
+		}
+	}
+	&__undertext {
+		font-size: 16px;
+		font-weight: 300;
+		margin: 25px 0 5px 0;
+	}
+	&__item-bg {
+		position: absolute;
+		margin: 0;
+		top: 0;
+		left: -110px;
+		background-color: #f8f6f3;
+		width: 100%;
+		height: 100%;
+		padding: 0 0 0 172px;
+	}
+}
+.line {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	background: #e8e8e8;
+	-webkit-animation: run 1s ease; 
+	-moz-animation:    run 1s ease; 
+	-o-animation:      run 1s ease;
+	animation:         run 1s ease; 
+	@keyframes run {
+	  0% {
+	    width: 0%;
+	  }
+	  100% {
+	    width: 100%;
+	  }
+	}
 }
