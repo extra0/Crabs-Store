@@ -1,0 +1,139 @@
+extends _layout
+block content
+	.container-fluid
+		a.game__link(href="#")
+			.game__name-block
+				img.game__name-img(src="img/game_name.png", alt="")
+		.main__content
+			ul.breadcrumps__list.list-inline
+				li.breadcrumps__item
+					a.breadcrumps__link(href="#") Главная страница
+				li.breadcrumps__item
+					p.breadcrumps__current История заказов
+			h1.title История заказов
+			table.cart__table
+				tr.cart__line
+					th.cart__title._name Название игры
+					th.cart__title._date Дата покупки
+					th.cart__title._key Ключ активации
+						p.cart__question
+							span.cart__answer Какой то ответ на какое то наведение
+					th.cart__title._action Действие
+				tr.cart__line
+					td.cart__item
+						a.cart__link(href="#")
+							img.cart__image(src="img/content/game.jpg", alt="")
+						.cart__item-inner
+							p.cart__console Игры для ПК
+							p.cart__game-name Metal Gear Solid V: The Phantom Pain
+					td.cart__item
+						p.cart__date 23.04.2015
+					td.cart__item
+						p.cart__key-text GH123901209-4210-KRHK
+					td.cart__item
+						a.cart__close(href="#")
+				tr.cart__line
+					td.cart__item
+						a.cart__link(href="#")
+							img.cart__image(src="img/content/game.jpg", alt="")
+						.cart__item-inner
+							p.cart__console Игры для ПК
+							p.cart__game-name Metal Gear Solid V: The Phantom Pain
+					td.cart__item
+						p.cart__date 23.04.2015
+					td.cart__item
+						.cart__key-link-wrap
+							a.cart__key-link(href="#") Скачать ключ
+					td.cart__item
+						a.cart__close(href="#")
+				tr.cart__line
+					td.cart__item
+						a.cart__link(href="#")
+							img.cart__image(src="img/content/game.jpg", alt="")
+						.cart__item-inner
+							p.cart__console Игры для ПК
+							p.cart__game-name Metal Gear Solid V: The Phantom Pain
+					td.cart__item
+						p.cart__date 23.04.2015
+					td.cart__item
+						p.cart__key-text GH123901209-4210-KRHK
+					td.cart__item
+						a.cart__close(href="#")
+				tr.cart__line
+					td.cart__item
+						a.cart__link(href="#")
+							img.cart__image(src="img/content/game.jpg", alt="")
+						.cart__item-inner
+							p.cart__console Игры для ПК
+							p.cart__game-name Metal Gear Solid V: The Phantom Pain
+					td.cart__item
+						p.cart__date 23.04.2015
+					td.cart__item
+						p.cart__key-text GH123901209-4210-KRHK
+					td.cart__item
+						a.cart__close(href="#")
+				tr.cart__line
+					td.cart__item
+						a.cart__link(href="#")
+							img.cart__image(src="img/content/game.jpg", alt="")
+						.cart__item-inner
+							p.cart__console Игры для ПК
+							p.cart__game-name Metal Gear Solid V: The Phantom Pain
+					td.cart__item
+						p.cart__date 23.04.2015
+					td.cart__item
+						p.cart__key-text GH123901209-4210-KRHK
+					td.cart__item
+						a.cart__close(href="#")
+				tr.cart__line
+					td.cart__item
+						a.cart__link(href="#")
+							img.cart__image(src="img/content/game.jpg", alt="")
+						.cart__item-inner
+							p.cart__console Игры для ПК
+							p.cart__game-name Metal Gear Solid V: The Phantom Pain
+					td.cart__item
+						p.cart__date 23.04.2015
+					td.cart__item
+						p.cart__key-text GH123901209-4210-KRHK
+					td.cart__item
+						a.cart__close(href="#")
+			.text-center
+				a.cart__show-more(href="#") Показать еще
+		.advantages__block
+			ul.advantages__list
+				li.advantages__item
+					img.advantages__img(src="img/advantages1.png", alt="")
+					p.advantages__text Индивидуальный подход
+				li.advantages__item
+					img.advantages__img(src="img/advantages2.png", alt="")
+					p.advantages__text Моментальная доставка
+				li.advantages__item
+					img.advantages__img(src="img/advantages3.png", alt="")
+					p.advantages__text Конкурентные цены
+				li.advantages__item
+					img.advantages__img(src="img/advantages4.png", alt="")
+					p.advantages__text Накопительные скидки
+				li.advantages__item
+					img.advantages__img(src="img/advantages5.png", alt="")
+					p.advantages__text Клиенты нас любят
+	.news__section
+		.container-fluid
+			.rss__block
+				h3.rss__title Будьте первыми кто узнает<br>о свежых новостях<br>Crabbs Store!
+				form.rss_form(action="#" method="get")
+					input.univ__input._email(type="email" required placeholder="Введите вашу почту")
+					button.btn._rss-btn(type="submit") Подписатся
+					p.rss__undertext Ваши данные защишены
+			.news__block
+				h2.subtitle._white Новости
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит две новых игры, за покупку топовых видеокарт
+					p.news__date 12 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно The Witcher 3: Wild Hunt или же Batman: Arkham Knight. 
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит
+					p.news__date 22 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно. 

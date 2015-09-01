@@ -838,7 +838,7 @@
 	bottom: 0;
 	left: 0;
 	height: 2px;
-	background: #e8e8e8;
+	background: #BFB8B8;
 	-webkit-animation: run 1s ease; 
 	-moz-animation:    run 1s ease; 
 	-o-animation:      run 1s ease;
@@ -850,5 +850,213 @@
 	  100% {
 	    width: 100%;
 	  }
+	}
+}
+// таблица в корзине
+.cart {
+	&__table {
+		width: 100%;
+		text-align: left;
+		padding: 0 3.5%;
+	}
+	&__line {
+		&:first-child {
+			background: #faf9f7;
+		}
+	}
+	&__title {
+		font-weight: 500;
+		color: #9e9d9c;
+		font-size: 16px;
+		padding: 18px;
+		position: relative;
+		&._name {
+			padding-left: 4.6%;
+			width: 35%;
+		}
+		&._date {
+			width: 19%;
+		}
+		&._key {
+			width: 28%
+		}
+		&._action {
+			width: 18%;
+		}
+	}
+	&__question {
+		cursor: pointer;
+		background: url(../img/main_sprite.png) -143px -78px no-repeat;
+		width: 22px;
+		height: 22px;
+		position: absolute;
+		top: 17px;
+		left: 156px;
+		margin: 0;
+		&:hover {
+			.cart__answer {
+				opacity: 1;
+				z-index: 2;
+			}
+		}
+	}
+	&__answer {
+		border-radius: 10px;
+		padding: 14px;
+		font-size: 12px;
+		line-height: 13px;
+		color: #fff;
+		background: #D4D4D2;
+		top: 32px;
+		left: -91px;
+		position: absolute;
+		opacity: 0;
+		margin: 0;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		z-index: -1;
+		width: 180px;
+		&:before {
+			position: absolute;
+			content: '';
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+			border-bottom: 7px solid #D4D4D2;
+			top: -6px;
+			left: 100px;
+		}
+	}
+	&__item {
+		padding: 18px;
+		border-bottom: 1px solid #e5e5e5;
+		&:first-child {
+			padding-left: 4.6%;
+		}
+	}
+	&__image {
+		float: left;
+		border-radius: 5px;
+		max-width: 67px;
+		max-height: 67px;
+		opacity: 1;
+		-webkit-transition: opacity 0.4s ease;
+		-moz-transition: opacity 0.4s ease;
+		-ms-transition: opacity 0.4s ease;
+		-o-transition: opacity 0.4s ease;
+		transition: opacity 0.4s ease;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	&__item-inner {
+		margin-left: 91px;
+		vertical-align: top;
+	}
+	&__console {
+		margin: 3px 0 7px 0;
+		color: #979797;
+	}
+	&__game-name {
+		font-size: 15px;
+		margin: 0;
+		padding-right: 41px;
+		line-height: 19px;
+	}
+	&__date {
+	    padding-left: 28px;
+	    position: relative;
+	    color: #979797;
+	    &:before {
+	    	content: '';
+	    	position: absolute;
+	    	background: url(../img/main_sprite.png) -114px -57px no-repeat;
+	    	width: 11px;
+	    	height: 11px;
+	    	top: 2px;
+	    	left: 4px;
+	    }
+	}
+	&__key-text {
+		margin: 0;
+		width: 215px;
+		line-height: 38px;
+		padding: 0 10px;
+		box-sizing:border-box;
+		border-radius: 35px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #979797;
+		border: 2px solid #bebebe
+	}
+	&__close {
+		display: block;
+		width: 11px;
+		margin: 0 37px;
+		height: 11px;
+		background: url(../img/main_sprite.png) -114px -81px no-repeat;
+	}
+	&__key-link-wrap {
+		width: 215px;
+		line-height: 38px;
+		border: 1px solid #dedede;
+		background: #f5f5f5;
+		border-radius: 35px;
+		text-align: center;
+	}
+	&__key-link {
+		position: relative;	
+		color: #555555;
+		left: 10px;
+		border-bottom: 1px solid;
+		display: inline-block;
+		line-height: 16px;
+		font-weight: 300;
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+		&:before {
+			content: '';
+		    position: absolute;
+		    background: url(../img/main_sprite.png) -147px -57px no-repeat;
+		    width: 7px;
+		    height: 14px;
+		    top: 2px;
+		    left: -22px;
+		}
+	}
+	&__show-more {
+		font-size: 21px;
+		font-weight: 500;
+		display: inline-block;
+		border-bottom: 2px dotted #585858;
+		position: relative;
+		color: #000;
+		margin: 20px 0;
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../img/main_sprite.png) -174px -56px no-repeat;
+			width: 22px;
+			height: 19px;
+			top: 5px;
+			left: -37px;
+			-webkit-transition: all 1s ease;
+			-moz-transition: all 1s ease;
+			-ms-transition: all 1s ease;
+			-o-transition: all 1s ease;
+			transition: all 1s ease;
+		}
+		&:hover {
+			&:before {
+				-moz-transform: rotate(360deg);
+				-webkit-transform: rotate(360deg);
+				-o-transform: rotate(360deg);
+				-ms-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
 	}
 }

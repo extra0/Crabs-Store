@@ -76,4 +76,10 @@ $(function(){
 		return false;
 	});
 
+	// удаяляем строку в таблице
+	$('.cart__close').click(function(){
+		$(this).parents('tr').remove();
+		return false;
+	});
+
 });
