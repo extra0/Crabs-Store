@@ -1,0 +1,220 @@
+extends _layout
+block content
+	.container-fluid
+		a.game__link(href="#")
+			.game__name-block
+				img.game__name-img(src="img/game_name.png", alt="")
+		.main__content
+			.breadcrumps__block._product
+				a.breadcrumps__back-to-list-link(href="#") Вернуться к списку
+				ul.breadcrumps__list.list-inline
+					li.breadcrumps__item
+						a.breadcrumps__link(href="#") Главная страница
+					li.breadcrumps__item
+						a.breadcrumps__link(href="#") Каталог
+					li.breadcrumps__item
+						a.breadcrumps__link(href="#") Игры для ПК
+					li.breadcrumps__item
+						p.breadcrumps__current Fallout 4
+			h1.title._product-title Fallout 4
+			ul.product__buy-info-list
+				li.product__buy-info-item
+					p.product__filter-type._product._hit Хит продаж
+				li.product__buy-info-item
+					p.product__filter-type._product._pre-order Предзаказ
+				li.product__buy-info-item
+					p.product__filter-type._product._sale Распродажа
+				li.product__buy-info-item
+					p.product__filter-type._product._new Новинка
+				li.product__buy-info-item
+					.yashare-auto-init(data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir" data-yashareTheme="counter")
+			.main__slider
+				img.product__game-logo(src="img/content/game_logo.png", alt="")
+				.buy__block
+					p.product__percent._posn-left -40%
+					.buy__block-price
+						p.buy__price 1895
+							span.rubl a
+						p.buy__old-price 2496
+							span.rubl a
+					button.btn._orange-btn._buy-btn(type="button") Купить
+				ul.main__game-slider
+					li.main__slide
+						img.main__slide-bg(src="img/content/slide_game.jpg", alt="")
+					li.main__slide
+						img.main__slide-bg(src="img/content/main_slide.jpg", alt="")
+					li.main__slide
+						img.main__slide-bg(src="img/content/slide_game.jpg", alt="")
+					//- li.main__slide
+					//- 	<iframe width="100%" height="440" src="https://www.youtube.com/embed/3cCIWmxW_8M" frameborder="0" allowfullscreen></iframe>
+			.main__game-slider-thumbs
+				a.main__game-slider-thumbs-link(data-slide-index="0" href="")
+					img.main__game-slider-thumbs-img(src="img/content/thumb.png", alt="")
+				a.main__game-slider-thumbs-link._video(data-slide-index="1" href="")
+					img.main__game-slider-thumbs-img(src="img/content/product.jpg", alt="")
+				a.main__game-slider-thumbs-link(data-slide-index="2" href="")
+					img.main__game-slider-thumbs-img(src="img/content/slide_game.jpg", alt="")
+				a.main__game-slider-thumbs-link(data-slide-index="0" href="")
+					img.main__game-slider-thumbs-img(src="img/content/thumb.png", alt="")
+				a.main__game-slider-thumbs-link(data-slide-index="1" href="")
+					img.main__game-slider-thumbs-img(src="img/content/main_slide.jpg", alt="")
+				a.main__game-slider-thumbs-link(data-slide-index="2" href="")
+					img.main__game-slider-thumbs-img(src="img/content/slide_game.jpg", alt="")
+				a.main__game-slider-thumbs-link(data-slide-index="0" href="")
+					img.main__game-slider-thumbs-img(src="img/content/thumb.png", alt="")
+				a.main__game-slider-thumbs-link(data-slide-index="1" href="")
+					img.main__game-slider-thumbs-img(src="img/content/main_slide.jpg", alt="")
+			.product__sidebar
+				.product__characteristics-block
+					h3.subtitle Характеристики
+					table.product__characteristics-table
+						tbody
+							tr
+								td.product__characteristics-item Жанр:
+								td.product__characteristics-item Экшен
+							tr
+								td.product__characteristics-item Платформа:
+								td.product__characteristics-item Windows
+							tr
+								td.product__characteristics-item Активация:
+								td.product__characteristics-item Origin
+							tr
+								td.product__characteristics-item Разработчик:
+								td.product__characteristics-item Visceral Games
+							tr
+								td.product__characteristics-item Издатель:
+								td.product__characteristics-item Electronic Arts
+							tr
+								td.product__characteristics-item Дата выхода:
+								td.product__characteristics-item 17 марта 2015
+							tr
+								td.product__characteristics-item Мультиплеер:
+								td.product__characteristics-item Есть
+							tr
+								td.product__characteristics-item Кооператив: 
+								td.product__characteristics-item Есть
+				.product__characteristics-block._buy
+					h3.subtitle Как купить игру?
+					ol.product__buy-list
+						li.product__buy-item Добавьте игру в корзину и оплатите покупку
+						li.product__buy-item Вы моментально получите ключ Steam на вашу почту.
+						li.product__buy-item Введите ключ на странице игры в системе Steam.
+						li.product__buy-item Скачайте игру, запустите и наслаждайтесь!
+			.product__description-block
+				h2.title Описание игры
+				p.product__description-text Fallout 4 — продолжение серии постапокалиптических Action/RPG от компании Bethesda Softworks. «Фоллаут 4» был официально анонсирован 3 июня 2015 года. Действие игры происходитв Бостоне, штат Массачусетс, спустя 200 лет после ядерной войны. В компании с немецкой овчаркой игрокам предстоит углубиться в историю убежища 111.
+				p.product__description-text На E3 2015 были показаны серьезные перемены в Fallout 4. В игру введена новая система строительства баз, кастомизации и крафтинга. За счет интересных геймплейных особенностей были несколько снижены графические характеристики.
+				p.product__description-text По словам Тодда Говарда, курирующего проект, Fallout 4 вдохновила свобода игрока в ГТА 5. Игроки смогут заняться чем угодно и пойти куда угодно.
+		.product__section._gray
+			h2.subtitle Сейчас купили
+			.product__list
+				ul.medium-slider
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product1.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 1 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 5 часов назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product1.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 1 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 5 часов назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+		.advantages__block
+			ul.advantages__list
+				li.advantages__item
+					img.advantages__img(src="img/advantages1.png", alt="")
+					p.advantages__text Индивидуальный подход
+				li.advantages__item
+					img.advantages__img(src="img/advantages2.png", alt="")
+					p.advantages__text Моментальная доставка
+				li.advantages__item
+					img.advantages__img(src="img/advantages3.png", alt="")
+					p.advantages__text Конкурентные цены
+				li.advantages__item
+					img.advantages__img(src="img/advantages4.png", alt="")
+					p.advantages__text Накопительные скидки
+				li.advantages__item
+					img.advantages__img(src="img/advantages5.png", alt="")
+					p.advantages__text Клиенты нас любят
+	.news__section
+		.container-fluid
+			.rss__block
+				h3.rss__title Будьте первыми кто узнает<br>о свежых новостях<br>Crabbs Store!
+				form.rss_form(action="#" method="get")
+					input.univ__input._email(type="email" required placeholder="Введите вашу почту")
+					button.btn._gray-btn(type="submit") Подписатся
+					p.rss__undertext Ваши данные защишены
+			.news__block
+				h2.subtitle._white Новости
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит две новых игры, за покупку топовых видеокарт
+					p.news__date 12 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно The Witcher 3: Wild Hunt или же Batman: Arkham Knight. 
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит
+					p.news__date 22 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно. 

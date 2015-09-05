@@ -20,17 +20,24 @@
 		text-align: center;
 	}
 }
-// блок слайдера на главной
+// блок слайдера
 .main {
 	&__content {
 		background: #fff;
-		padding: 25px 0;
+		padding: 11px 0 25px 0;
 		border-radius: 6px;
+		margin-bottom: -5px;
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
 	}
 	&__slider {
 		background: #eb9a00;
 		border: 7px solid #eb9a00;
 		text-align: center;
+		position: relative;
 		.bx-prev,
 		.bx-next {
 			width: 43px;
@@ -58,6 +65,11 @@
 	&__top-slider {
 		margin: 0;
 		padding: 0;
+	}
+	&__game-slider {
+		margin: 0;
+		padding: 0;
+
 	}
 	&__promo {
 		font-family: 'GothamPro Regular';
@@ -94,6 +106,51 @@
 	}
 	&__slide-game-logo {
 		max-height: 85px;
+	}
+	&__game-slider-thumbs {
+		display: table;
+		margin: 10px;
+	}
+	&__game-slider-thumbs-link {
+		display: table-cell;
+		padding: 0 5px;
+		position: relative;
+		opacity: 0.6;
+		width: 1%;
+		&.active {
+			opacity: 1;
+		}
+		&._video {
+			&:before {
+				content: '';
+				position: absolute;
+				background: url(../img/play.png) 0 0 no-repeat;
+				width: 29px;
+				height: 29px;
+				top: 33%;
+				left: 36%;
+				z-index: 10;
+			}
+		}
+	}
+	&__game-slider-thumbs-img {
+		max-width: 137px;
+		max-height: 86px;
+		width: 100%;
+		height: 100%;
+		vertical-align: top;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		&:hover {
+			-moz-transform: scale(1.1);
+			-webkit-transform: scale(1.1);
+			-o-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			transform: scale(1.1);
+		}
 	}
 }
 // блок баннеров под главным слайдером
@@ -275,14 +332,21 @@
 		margin: 23px 29px 0 0;
 		vertical-align: top;
 	}
-	&__pay-link {
+	&__filter-type {
 		display: inline-block;
 		border-bottom: 1px dotted #a1a1a1;
 		color: #a1a1a1;
 		font-size: 16px;
 		line-height: 20px;
-		margin-left: 50px;
+		margin: 0px;
 		position: relative;
+		&._product {
+			border-bottom: 1px solid transparent;
+			color: #000;
+			font-size: 13px;
+			padding-top: 1px;
+			font-weight: 500;
+		}
 		&:hover {
 			border-bottom: 1px solid transparent;
 		}
@@ -296,8 +360,9 @@
 			left: -28px;
 		}
 		&._new:before {background-position: -191px 2px;}
-		&._pay-first:before {background-position: -222px 1px;}
+		&._pre-order:before {background-position: -222px 1px;}
 		&._sale:before {background-position: -252px 2px;}
+		&._hit:before {background-position: -279px 2px;}
 	}
 	&__list {
 		margin-left: -2%;
@@ -323,6 +388,15 @@
 		max-height: 110px;
 		display: block;
 		margin: auto;
+		opacity: 1;
+		-webkit-transition: opacity 0.4s ease;
+		-moz-transition: opacity 0.4s ease;
+		-ms-transition: opacity 0.4s ease;
+		-o-transition: opacity 0.4s ease;
+		transition: opacity 0.4s ease;
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 	&__cart {
 		display: inline-block;
@@ -367,12 +441,19 @@
 		font-weight: bold;
 		color: #a7c749;
 		border: 2px solid #a7c749;
-		padding: 3px 10px;
-		border-radius: 7px;
+		padding: 8px 9px;
+		border-radius: 13px;
+		z-index: 2;
 		position: absolute;
 		bottom: 9px;
 		right: 9px;	
 		margin: 0;	
+		&._posn-left {
+			top: 10px;
+			left: 0;
+			bottom: auto;
+			right: auto;
+		}
 	}
 	&__old-price {
 		color: #b6b6b6;
@@ -389,6 +470,122 @@
 			width: 100%;
 			height: 1px;
 			background: #b6b6b6;
+		}
+	}
+	&__buy-info-list {
+		display: inline-block;
+		padding: 0;
+		margin: 22px 0 0 16px;
+		vertical-align: top;
+		list-style-type: none;
+	}
+	&__buy-info-item {
+		display: inline-block;
+		padding-left: 41px;
+		padding-right: 19px;
+		border-left: 1px solid #d9d9d9;
+		&:last-child {
+			padding-left: 20px;
+		}
+	}
+	&__game-logo {
+		position: absolute;
+		top: 40px;
+		left: 3%;
+		z-index: 20;
+	}
+	&__description-block {
+		margin: 0 3.5%;
+	    width: 60%;
+	    .title {
+	    	padding-left: 0;
+	    	padding-bottom: 19px;
+	    	margin-bottom: 25px;
+	    }
+	}
+	&__description-text {
+		font-size: 15px;
+		font-weight: 300;
+		line-height: 20px;
+		margin-bottom: 19px;
+	}
+	// сайдбар в описании продукта
+	&__sidebar {
+		float: right;
+		padding: 8px;
+		width: 300px;
+		margin-top: 16px;
+	    margin-right: 4.3%;
+		background: #ece9e2;
+	}
+	&__characteristics-block {
+		padding: 0 29px 0 19px;
+		margin-bottom: 42px;
+		&._buy {
+			background-color: #fff;
+			padding: 3px 20px;
+			margin-bottom: 0;
+		}
+		.subtitle {
+			font-size: 22px;
+		    margin: 17px 0 22px 0;
+		    padding: 0 0 16px 0;
+		    border-bottom: 1px solid #d8d4ce;
+		    position: relative;
+		    &:before {
+		    	content: '';
+		    	position: absolute;
+		    	background: #c7c5bf;
+		    	width: 42px;
+		    	height: 1px;
+		    	bottom: -1px;
+		    	left: 0;
+		    }
+		}
+	}
+	&__characteristics-table {
+		width: 100%;
+		td {
+			width: 58%;
+			padding-bottom: 14px;
+			font-size: 13px;
+			&:first-child {
+				font-weight: 300;
+			}
+			&:last-child {
+				font-weight: 500;
+			}
+		}
+	}
+	//  блок "как купить"
+	&__buy-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0 0 40px 0;
+		counter-reset: point;
+	}
+	&__buy-item {
+		font-weight: 300;
+		padding-left: 64px;
+		line-height: 18px;
+		margin-bottom: 23px;
+		position: relative;
+		&:before {
+			content: counter(point);
+			counter-increment: point 1;
+			font-size: 16px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			padding: 2px 0 4px 0;
+			color: #feb541;
+			font-weight: bold;
+			text-align: center;
+			border-radius: 10px;
+			width: 37px;
+			line-height: 25px;
+			z-index: 2;
+			border: 2px solid #feb541;
 		}
 	}
 }
@@ -408,6 +605,11 @@
 		width: 100%;
 		height: 1px;
 		background: #faf9f7;
+	}
+	&._product-title {
+		border-bottom: none;
+		display: inline-block;
+		padding-bottom: 16px;
 	}
 }
 // второстепенный заголовок
@@ -651,6 +853,20 @@
 	&._enter {
 		width: 103px;
 	}
+	&._buy-btn {
+		width: 141px;
+		padding-left: 32px;
+		font-weight: bold;
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../img/main_sprite.png) -253px -58px no-repeat;
+			width: 18px;
+			height: 16px;
+			top: 17px;
+			left: 23px;
+		}
+	}
 	&._orange-btn {
 		background: rgb(255,182,67); /* Old browsers */
 		background: -moz-linear-gradient(top,  rgba(255,182,67,1) 0%, rgba(251,177,55,1) 24%, rgba(241,162,16,1) 74%, rgba(236,157,2,1) 100%); /* FF3.6+ */
@@ -726,8 +942,15 @@
 }
 // хлебные крошки
 .breadcrumps {
+	&__block {
+		margin: 0 3.5%;
+		&._product {
+			padding: 0 0 6px 0;
+			margin-bottom: 5px;
+			border-bottom: 1px solid #ededed;
+		}
+	}
 	&__list {
-		margin: 0 0 0 3.5%;
 		padding: 0;
 	}
 	&__item {
@@ -750,8 +973,28 @@
 		}
 	}
 	&__current {
-		color: #a1a1a1;
+		color: #000;
 		margin: 0;
+	}
+	&__back-to-list-link {
+		float: right;
+		color: #939393;
+		border-bottom: 1px solid;
+		display: inline-block;
+		line-height: 16px;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../img/main_sprite.png) -256px -31px no-repeat;
+			width: 11px;
+			height: 10px;
+			top: 4px;
+			left: -31px;
+		}
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
 	}
 }
 // список гарантий 
@@ -1260,5 +1503,38 @@
 		font-size: 12px;
 		margin: 10px 0 0 0;
 		font-style: italic;
+	}
+}
+// блок с ценой в продукте
+.buy {
+	&__block {
+		position: absolute;
+		bottom: 19px;
+		left: 3.5%;
+		z-index: 2;
+		text-align: left;
+	}
+	&__block-price {
+		display: inline-block;
+		margin: 0 19px 0 86px;
+		vertical-align: top;
+	}
+	&__price {
+		color: #fff;
+		font-size: 41px;
+		margin: 0;
+		font-weight: bold;
+		.rubl {
+			font-size: 32px;
+			font-weight: normal;
+		}
+	}
+	&__old-price {
+		font-size: 13px;
+		color: #b1adaa;
+		margin: 0 0 0 5px;
+		position: relative;
+		text-decoration: line-through;
+		top: -5px;
 	}
 }

@@ -25,6 +25,16 @@ $(function(){
 		auto: false
 	});
 
+	// слайдер внутри продукта
+	$('.main__game-slider').bxSlider({
+		speed: 700,
+		easing: 'cubic-bezier(.72,.05,.39,.37)',
+		controls: true,
+		auto: true,
+		autoHover: true,
+		pagerCustom: '.main__game-slider-thumbs'
+	});
+
 	// меняем задний фон банеров
 	$('.banner__block').hover(function(){
 		$(this).find('.banner__bg').toggleClass('_hover');
