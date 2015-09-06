@@ -1,5 +1,10 @@
 $(function(){
 
+	// ф-я разбивки на разряды
+	function numberWithCommas(x) {
+		return x.toString().replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g, "\$1 ");
+	}
+
 	// вызов фенсибокса
 	$('.fancy').fancybox();
 
@@ -90,6 +95,60 @@ $(function(){
 	$('.cart__close').click(function(){
 		$(this).parents('tr').remove();
 		return false;
+	});
+
+	//корзина
+	function calculator() {
+		var sum = 0,
+			totalSum = $('.cart__total-price');
+
+		// просчет общей суммы
+		$('._total-product-price').each(function() {
+			sum += parseFloat($(this).attr('data-total'));
+		});
+
+
+		// вывод суммы в строку "всего:" 
+		totalSum.attr('data-total', sum);
+		totalSum.html(sum);
+		totalSum.html(numberWithCommas(totalSum.html()));
+
+	}
+
+	// изменнеие значения input
+    $('.cart__counter').on('click', function() {
+
+		var input = $(this).parent().find('input'),
+			totalLine = $(this).parents('tr').find('._total-product-price'),
+			currentPriceLine = $(this).parents('tr').find('._price');
+
+		// изменяем значение в инпуте
+		input.val(parseInt(input.val()) + parseInt($(this).attr('data-val')));
+
+		if (input.val() < input.attr('data-min-val')) {
+			input.val('1');
+		}
+
+		// изменяем значение общее по товару
+		totalLine.html(numberWithCommas(input.val() * parseInt(currentPriceLine.attr('data-val'))));
+		totalLine.attr('data-total', input.val() * parseInt(currentPriceLine.attr('data-val')));
+
+		calculator();
+	});
+
+	calculator();
+
+	// удаляем элемент
+	$('.cart__close').click(function() {
+		calculator();
+	});
+
+
+	$('.cart__promo-submit').click(function(){
+		var i;
+		i = $('.cart__total-price').attr('data-total') - $('#promo').attr('data-discount');
+		i = numberWithCommas(i);
+		$('.cart__total-price').html(i);
 	});
 
 });

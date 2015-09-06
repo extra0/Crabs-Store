@@ -63,78 +63,82 @@
             <ul class="breadcrumps__list list-inline">
               <li class="breadcrumps__item"><a href="#" class="breadcrumps__link">Главная страница</a></li>
               <li class="breadcrumps__item">
-                <p class="breadcrumps__current">Отзывы</p>
+                <p class="breadcrumps__current">Корзина</p>
               </li>
             </ul>
           </div>
-          <h1 class="title">Отзывы</h1>
-          <div class="feedback__list">
-            <div class="feedback__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
-              <div class="feedback__info">
-                <p class="feedback__text">Офигенная игра, спасибо большое это очень </p>
-                <p class="feedback__date">24.04.2015</p>
-                <p class="feedback__autor">Dark_Angel43</p>
+          <h1 class="title">Корзина</h1>
+          <form action="#" method="post" class="cart__form">
+            <table class="cart__table">
+              <tbody>
+                <tr class="cart__line">
+                  <th class="cart__title _product">Товары</th>
+                  <th class="cart__title _price">Цена</th>
+                  <th class="cart__title _num">Количество</th>
+                  <th class="cart__title _total-price">Сумма</th>
+                  <th class="cart__title _action"></th>
+                </tr>
+                <tr class="cart__line">
+                  <td class="cart__item _border"><a href="#" class="cart__link"><img src="img/content/game1.jpg" alt="" class="cart__image _sizeL"></a>
+                    <div class="cart__item-inner _marg">
+                      <p class="cart__console">Игры для ПК</p>
+                      <p class="cart__game-name">Metal Gear Solid V: The Phantom Pain</p>
+                    </div>
+                  </td>
+                  <td class="cart__item _border">
+                    <p class="cart__old-price">1250<span class="rubl">a</span></p>
+                    <p data-val="830" class="cart__current-price _price">830<span class="rubl">a</span></p>
+                  </td>
+                  <td class="cart__item _border">
+                    <div class="cart__counter-wrap">
+                      <button type="button" data-val="-1" class="cart__counter _minus"></button>
+                      <input type="text" value="1" data-min-val="1" readonly class="cart__input-counts">
+                      <button type="button" data-val="1" class="cart__counter _plus"></button>
+                    </div>
+                  </td>
+                  <td class="cart__item _border">
+                    <p data-total="830" class="cart__current-price _total-product-price">830</p><span class="rubl">a</span>
+                  </td>
+                  <td class="cart__item"><a href="#" class="cart__close"></a></td>
+                </tr>
+                <tr class="cart__line">
+                  <td class="cart__item _border"><a href="#" class="cart__link"><img src="img/content/game1.jpg" alt="" class="cart__image _sizeL"></a>
+                    <div class="cart__item-inner _marg">
+                      <p class="cart__console">Игры для ПК</p>
+                      <p class="cart__game-name">Metal Gear Solid V: The Phantom Pain</p>
+                    </div>
+                  </td>
+                  <td class="cart__item _border">
+                    <p class="cart__old-price">1250<span class="rubl">a</span></p>
+                    <p data-val="830" class="cart__current-price _price">830<span class="rubl">a</span></p>
+                  </td>
+                  <td class="cart__item _border">
+                    <div class="cart__counter-wrap">
+                      <button type="button" data-val="-1" class="cart__counter _minus"></button>
+                      <input type="text" value="1" data-min-val="1" readonly class="cart__input-counts">
+                      <button type="button" data-val="1" class="cart__counter _plus"></button>
+                    </div>
+                  </td>
+                  <td class="cart__item _border">
+                    <p data-total="830" class="cart__current-price _total-product-price">830</p><span class="rubl">a</span>
+                  </td>
+                  <td class="cart__item"><a href="#" class="cart__close"></a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="cart__table-footer">
+              <div class="cart__total-block"><span class="cart__total-text">Итого к оплате:</span>
+                <p class="cart__total-price">830</p><span class="rubl">a</span>
+              </div><a href="#" class="cart__catalog-back">Вернутся в каталог</a>
+              <div class="cart__promo-block">
+                <label for="promo" class="cart__promo-label"></label>
+                <input id="promo" type="text" placeholder="Введите промо-код" data-discount="2" class="cart__promo-input">
+                <button type="button" class="cart__promo-submit"></button>
               </div>
+              <button type="submit" class="cart__checkout">Оформить заказ</button>
             </div>
-            <div class="feedback__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
-              <div class="feedback__info">
-                <p class="feedback__text">Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры</p>
-                <p class="feedback__date">24.04.2015</p>
-                <p class="feedback__autor">Dark_Angel43</p>
-              </div>
-            </div>
-            <div class="feedback__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
-              <div class="feedback__info">
-                <p class="feedback__text">Офигенная игра, спа</p>
-                <p class="feedback__date">24.04.2015</p>
-                <p class="feedback__autor">Dark_Angel43</p>
-              </div>
-            </div>
-            <div class="feedback__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
-              <div class="feedback__info">
-                <p class="feedback__text">Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры!Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры!Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры!Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры!Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры!Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры!Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры!</p>
-                <p class="feedback__date">24.04.2015</p>
-                <p class="feedback__autor">Dark_Angel43</p>
-              </div>
-            </div>
-            <div class="feedback__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
-              <div class="feedback__info">
-                <p class="feedback__text">Офигенная игра, спасибо большое это очень хорошо что у нас есть возможность покупать игры</p>
-                <p class="feedback__date">24.04.2015</p>
-                <p class="feedback__autor">Dark_Angel43</p>
-              </div>
-            </div>
-            <div class="feedback__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
-              <div class="feedback__info">
-                <p class="feedback__text">Офигенная игра, спа</p>
-                <p class="feedback__date">24.04.2015</p>
-                <p class="feedback__autor">Dark_Angel43</p>
-              </div>
-            </div>
-          </div>
-          <div class="feedback__form-block">
-            <h3 class="subtitle">Добавить отзыв</h3>
-            <form action="#" method="pos" class="feedback__form">
-              <div class="feedback__form-section _widthS">
-                <label for="number" class="feedback__input-icon _number"></label>
-                <input id="number" type="text" required placeholder="Номер заказа" class="feedback__input">
-                <label for="email" class="feedback__input-icon _email"></label>
-                <input id="email" type="email" required placeholder="Введите вашу почту" class="feedback__input">
-              </div>
-              <div class="feedback__form-section _widthL">
-                <textarea placeholder="Ваш отзыв" class="feedback__textarea"></textarea><span class="feedback__icon-textarea"></span>
-              </div>
-              <div class="feedback__form-section _widthS">
-                <button type="submit" class="btn _orange-btn">Добавить отзыв</button><span class="feedback__attention">Ваш отзыв пройдет модерацию на рекламу и будет добавлен</span>
-              </div>
-            </form>
-          </div>
+          </form>
+          <div class="text-center"><img src="img/table_pay.png" alt="" class="cart__pay-img"></div>
         </div>
         <div class="advantages__block">
           <ul class="advantages__list">
