@@ -61,57 +61,133 @@
       </header>
       <div class="container-fluid"><a href="#" class="game__link">
           <div class="game__name-block"><img src="img/game_name.png" alt="" class="game__name-img"></div></a>
-        <div class="main__slider">
-          <p class="main__promo">Текущий промокод : <strong>leto2015</strong></p>
-          <ul class="main__game-slider">
-            <li class="main__slide"><img src="img/content/main_slide.jpg" alt="" class="main__slide-bg">
-              <div class="main__slide-inner"><img src="img/content/slider_game_logo.png" alt="" class="main__slide-game-logo">
-                <p class="main__slide-text">Вы покупаете и все</p>
+        <div class="main__content">
+          <div class="sidebar__section">
+            <div class="sidebar__block _block-yellow">
+              <h3 class="sidebar__title _white">Цена</h3>
+              <div class="sidebar__filter-inner-block"><span class="sidebar__filter-text _white">Цена от</span>
+                <input id="inp_min" type="text" value="2000" class="sidebar__price-filter-input"><span class="sidebar__filter-text _white">до</span>
+                <input id="inp_max" type="text" value="6000" class="sidebar__price-filter-input"><span class="sidebar__price-filter-currency rubl">a</span>
               </div>
-            </li>
-            <li class="main__slide"><img src="img/content/main_slide.jpg" alt="" class="main__slide-bg">
-              <div class="main__slide-inner"><img src="img/content/slider_game_logo.png" alt="" class="main__slide-game-logo">
-                <p class="main__slide-text">Вы покупаете лицензионный ключ Witcher 3 Wild Hunt (Ведьмак Дикая Охота) для активации в сервисе GOG.com.Вы покупаете лицензионный ключ Witcher 3 Wild Hunt (Ведьмак Дикая Охота) для активации в сервисе GOG.com.</p>
-              </div>
-            </li>
-            <li class="main__slide"><img src="img/content/main_slide.jpg" alt="" class="main__slide-bg">
-              <div class="main__slide-inner"><img src="img/content/slider_game_logo.png" alt="" class="main__slide-game-logo">
-                <p class="main__slide-text">Вы покупаете лицензионный ключ Witcher 3 Wild Hunt (Ведьмак Дикая Охота) для активации в сервисе GOG.com.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="banner__section">
-          <div class="banner__block"><img src="img/content/banner1.jpg" alt="" class="banner__bg"><img src="img/content/banner2.jpg" alt="" class="banner__bg _hover">
-            <div class="product__block _banner _invers">
-              <div class="product__info">
-                <p class="product__type">Компьютерные, Экшен</p>
-                <h3 class="product__name">Assassin’s Creed: Синдикат</h3><a href="#" class="product__price _banner">799<span class="rubl">a</span></a>
+              <script>
+                $(document).ready(function(){
+                	// фильтрация цены в каталоге 
+                	var min = $('#inp_min'),
+                		max = $('#inp_max'),
+                		slider = $("#price-range").slider({
+                		range: true,
+                		min: 0,
+                		max: 10000,
+                		step: 100,
+                		values: [2000, 6000],
+                		slide: function(event, ui) {
+                
+                			- min.val(ui.values[ 0 ]);
+                			- max.val(ui.values[ 1 ]);
+                
+                			if (min.val() == 0) {min.val('1');}
+                		}
+                	});
+                	$('#inp_min').on('keyup', function() {
+                		slider.slider("values", 0, $(this).val());
+                
+                		if (min.val() == 0) {
+                			min.val('1');
+                		}
+                	});
+                
+                	$('#inp_max').on('keyup', function() {
+                		slider.slider("values", 1, $(this).val());
+                	});
+                });
+              </script>
+              <div id="price-range" class="sidebar__price-range"></div>
+            </div>
+            <div class="sidebar__block _block-dark-gray"> 
+              <h3 class="sidebar__title">Год выпуска</h3>
+              <div class="sidebar__filter-inner-block"><span class="sidebar__filter-text">от</span>
+                <select class="sidebar__filter-select select">
+                  <option value="1">2000</option>
+                  <option value="1">2000</option>
+                  <option value="1">2000</option>
+                  <option value="1">2000</option>
+                  <option value="1">2000</option>
+                  <option value="1">2000</option>
+                  <option value="1">2000</option>
+                  <option value="1">2000</option>
+                  <option value="2">9999</option>
+                </select><span class="sidebar__filter-text">до</span>
+                <select class="sidebar__filter-select select">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
               </div>
             </div>
-          </div>
-          <div class="banner__block"><img src="img/content/banner1.jpg" alt="" class="banner__bg _hover"><img src="img/content/banner2.jpg" alt="" class="banner__bg">
-            <div class="product__block _banner">
-              <div class="product__info">
-                <p class="product__type">Компьютерные, Экшен</p>
-                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price _banner">799<span class="rubl">a</span></a>
+            <div class="sidebar__block _block-light-gray">
+              <h3 class="sidebar__title">Тип продукта</h3>
+              <div class="sidebar__filter-inner-block">
+                <label class="sidebar__filter-label _new">
+                  <input type="checkbox" class="sidebar__filter-checkbox checkbox">Новинки
+                </label>
+                <label class="sidebar__filter-label _best">
+                  <input type="checkbox" class="sidebar__filter-checkbox checkbox">Лучшие
+                </label>
+                <label class="sidebar__filter-label _sale">
+                  <input type="checkbox" class="sidebar__filter-checkbox checkbox">Распродажи
+                </label>
+                <label class="sidebar__filter-label _pre-order">
+                  <input type="checkbox" class="sidebar__filter-checkbox checkbox">Предзаказ
+                </label>
               </div>
             </div>
-          </div>
-          <div class="banner__block"><img src="img/content/banner1.jpg" alt="" class="banner__bg"><img src="img/content/banner2.jpg" alt="" class="banner__bg _hover">
-            <div class="product__block _banner">
-              <div class="product__info">
-                <p class="product__type">Компьютерные, Экшен</p>
-                <h3 class="product__name">Wolfenstein [xBox]</h3><a href="#" class="product__price _banner">1 799<span class="rubl">a</span></a>
-              </div>
+            <div class="sidebar__block _block-middle-gray">
+              <label class="sidebar__filter-label _sizeL _type-pc">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox _sizeL">Игры для ПК
+              </label>
+              <label class="sidebar__filter-label _sizeL _type-ps">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox _sizeL">Playstation
+              </label>
+              <label class="sidebar__filter-label _sizeL _type-xbox">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox _sizeL">Xbox
+              </label>
+              <h3 class="sidebar__title _no-border">Жанры</h3>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">Экшены / Шутеры
+              </label>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">RPG
+              </label>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">Стратегии
+              </label>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">MMORPG
+              </label>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">Спортивные
+              </label>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">Симуляторы / Гонки
+              </label>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">Мультиплеерные
+              </label>
+              <label class="sidebar__filter-label _gray">
+                <input type="checkbox" class="sidebar__filter-checkbox checkbox">Кооперативные
+              </label>
             </div>
           </div>
-        </div>
-        <div class="product__section">
-          <div class="product__pay-type"><a href="#" class="product__filter-type _new">Новинки</a><a href="#" class="product__filter-type _pre-order">Предзаказы</a><a href="#" class="product__filter-type _sale">Распродажи</a><a href="#" class="product__filter-type _hit">Хит продаж</a></div>
-          <h2 class="subtitle">Лучшие игры</h2>
-          <div class="product__list">
-            <div class="product__block">
+          <div class="catalog__section">
+            <div class="breadcrumps__block">
+              <ul class="breadcrumps__list list-inline">
+                <li class="breadcrumps__item"><a href="#" class="breadcrumps__link">Главная страница</a></li>
+                <li class="breadcrumps__item">
+                  <p class="breadcrumps__current">Каталог игр</p>
+                </li>
+              </ul>
+            </div>
+            <h1 class="title">Каталог игр</h1>
+            <div class="product__block _catalog-set">
               <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image">
                   <p class="product__percent">-40%</p></a></div>
               <div class="product__info">
@@ -120,7 +196,7 @@
                   <p class="product__old-price">900<span class="rubl">a</span></p>600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
+            <div class="product__block _catalog-set">
               <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
@@ -128,55 +204,75 @@
                   <p class="product__old-price">1 900<span class="rubl">a</span></p>1 600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product1.jpg" alt="" class="product__image"></a></div>
+            <div class="product__block _catalog-set">
+              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image">
+                  <p class="product__percent">-40%</p></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
-                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price">600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">900<span class="rubl">a</span></p>600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
+            <div class="product__block _catalog-set">
               <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
-                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price">600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">1 900<span class="rubl">a</span></p>1 600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
+            <div class="product__block _catalog-set">
+              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image">
+                  <p class="product__percent">-40%</p></a></div>
+              <div class="product__info">
+                <p class="product__type">Игры для ПК</p>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">900<span class="rubl">a</span></p>600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+              </div>
+            </div>
+            <div class="product__block _catalog-set">
               <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
-                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price">1 600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">1 900<span class="rubl">a</span></p>1 600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product1.jpg" alt="" class="product__image"></a></div>
+            <div class="product__block _catalog-set">
+              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image">
+                  <p class="product__percent">-40%</p></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
-                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price">600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">900<span class="rubl">a</span></p>600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
+            <div class="product__block _catalog-set">
               <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
-                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price">600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">1 900<span class="rubl">a</span></p>1 600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
-              <div class="product__image-wrap"><a href="#"><img src="img/content/product1.jpg" alt="" class="product__image"></a></div>
+            <div class="product__block _catalog-set">
+              <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image">
+                  <p class="product__percent">-40%</p></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
-                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price">1 600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">900<span class="rubl">a</span></p>600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
-            <div class="product__block">
+            <div class="product__block _catalog-set">
               <div class="product__image-wrap"><a href="#"><img src="img/content/product.jpg" alt="" class="product__image"></a></div>
               <div class="product__info">
                 <p class="product__type">Игры для ПК</p>
-                <h3 class="product__name">Wolfenstein</h3><a href="#" class="product__price">10<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
+                <h3 class="product__name">Wolfenstein: The Old Blood [PC]</h3><a href="#" class="product__price"> 
+                  <p class="product__old-price">1 900<span class="rubl">a</span></p>1 600<span class="rubl">a</span></a><a href="#" class="product__cart"></a>
               </div>
             </div>
+            <div class="catalog__under-text text-center"><a href="#" class="cart__show-more">Показать еще</a></div>
           </div>
         </div>
         <div class="product__section _gray">

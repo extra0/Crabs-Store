@@ -2,6 +2,31 @@
 	.advantages__text {
 		font-size: 14px;
 	}
+	.product {
+		&__old-price {
+			font-size: 13px;
+		}
+		&__price {
+			font-size: 16px;
+		}
+	}
+	.medium-slider {
+		&__item {
+			width: 290px!important;
+			margin-right: 16px!important;
+			&:nth-child(2n+2) {
+				margin-left: 19px;
+				margin-right: 24px!important;
+			}
+			&:nth-child(3n+2) {
+				margin-left: 13px;
+			}
+			&:nth-child(3n+1) {
+				margin-left: 33px;
+				margin-right: 17px!important;
+			}
+		}
+	}
 }
 @media (max-width: 1100px) {
 	.advantages__text {
@@ -16,5 +41,22 @@
 	}
 	.cart__item._border:before {
 		right: 23px;
+	}
+	.product {
+		&__image {
+			max-width: 96px;
+			max-height: 80px;
+		}
+		&__percent {
+			font-size: 12px;
+		}
+		&__info {
+			margin-left: 115px;
+		}
+	}
+	.rss {
+		&__title {
+			font-size: 18px;
+		}
 	}
 }

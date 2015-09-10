@@ -1,0 +1,374 @@
+extends _layout
+block content
+	.container-fluid
+		a.game__link(href="#")
+			.game__name-block
+				img.game__name-img(src="img/game_name.png", alt="")
+		.main__content
+			.sidebar__section
+				.sidebar__block._block-yellow
+					h3.sidebar__title._white Цена
+					.sidebar__filter-inner-block
+						span.sidebar__filter-text._white Цена от
+						input.sidebar__price-filter-input#inp_min(type="text" value="2000")
+						span.sidebar__filter-text._white до
+						input.sidebar__price-filter-input#inp_max(type="text" value="6000")
+						span.sidebar__price-filter-currency.rubl a
+					script.
+						$(document).ready(function(){
+							// фильтрация цены в каталоге 
+							var min = $('#inp_min'),
+								max = $('#inp_max'),
+								slider = $("#price-range").slider({
+								range: true,
+								min: 0,
+								max: 10000,
+								step: 100,
+								values: [2000, 6000],
+								slide: function(event, ui) {
+
+									- min.val(ui.values[ 0 ]);
+									- max.val(ui.values[ 1 ]);
+
+									if (min.val() == 0) {min.val('1');}
+								}
+							});
+							$('#inp_min').on('keyup', function() {
+								slider.slider("values", 0, $(this).val());
+
+								if (min.val() == 0) {
+									min.val('1');
+								}
+							});
+
+							$('#inp_max').on('keyup', function() {
+								slider.slider("values", 1, $(this).val());
+							});
+						});
+					.sidebar__price-range#price-range
+				.sidebar__block._block-dark-gray 
+					h3.sidebar__title Год выпуска
+					.sidebar__filter-inner-block
+						span.sidebar__filter-text от
+						select.sidebar__filter-select.select
+							option(value="1") 2000
+							option(value="1") 2000
+							option(value="1") 2000
+							option(value="1") 2000
+							option(value="1") 2000
+							option(value="1") 2000
+							option(value="1") 2000
+							option(value="1") 2000
+							option(value="2") 9999
+						span.sidebar__filter-text до
+						select.sidebar__filter-select.select
+							option(value="1") 1
+							option(value="2") 2
+				.sidebar__block._block-light-gray
+					h3.sidebar__title Тип продукта
+					.sidebar__filter-inner-block
+						label.sidebar__filter-label._new
+							input.sidebar__filter-checkbox.checkbox(type="checkbox")
+							| Новинки
+						label.sidebar__filter-label._best
+							input.sidebar__filter-checkbox.checkbox(type="checkbox")
+							| Лучшие
+						label.sidebar__filter-label._sale
+							input.sidebar__filter-checkbox.checkbox(type="checkbox")
+							| Распродажи
+						label.sidebar__filter-label._pre-order
+							input.sidebar__filter-checkbox.checkbox(type="checkbox")
+							| Предзаказ
+				.sidebar__block._block-middle-gray
+					label.sidebar__filter-label._sizeL._type-pc
+						input.sidebar__filter-checkbox.checkbox._sizeL(type="checkbox")
+						| Игры для ПК
+					label.sidebar__filter-label._sizeL._type-ps
+						input.sidebar__filter-checkbox.checkbox._sizeL(type="checkbox")
+						| Playstation
+					label.sidebar__filter-label._sizeL._type-xbox
+						input.sidebar__filter-checkbox.checkbox._sizeL(type="checkbox")
+						| Xbox
+					h3.sidebar__title._no-border Жанры
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| Экшены / Шутеры
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| RPG
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| Стратегии
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| MMORPG
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| Спортивные
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| Симуляторы / Гонки
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| Мультиплеерные
+					label.sidebar__filter-label._gray
+						input.sidebar__filter-checkbox.checkbox(type="checkbox")
+						| Кооперативные
+			.catalog__section
+				.breadcrumps__block
+					ul.breadcrumps__list.list-inline
+						li.breadcrumps__item
+							a.breadcrumps__link(href="#") Главная страница
+						li.breadcrumps__item
+							p.breadcrumps__current Каталог игр
+				h1.title Каталог игр
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+							p.product__percent -40%
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 900
+								span.rubl a
+							| 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 1 900
+								span.rubl a
+							| 1 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+							p.product__percent -40%
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 900
+								span.rubl a
+							| 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 1 900
+								span.rubl a
+							| 1 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+							p.product__percent -40%
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 900
+								span.rubl a
+							| 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 1 900
+								span.rubl a
+							| 1 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+							p.product__percent -40%
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 900
+								span.rubl a
+							| 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 1 900
+								span.rubl a
+							| 1 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+							p.product__percent -40%
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 900
+								span.rubl a
+							| 600
+							span.rubl a
+						a.product__cart(href="#")
+				.product__block._catalog-set
+					.product__image-wrap
+						a(href="#")
+							img.product__image(src="img/content/product.jpg", alt="")
+					.product__info
+						p.product__type Игры для ПК
+						h3.product__name Wolfenstein: The Old Blood [PC]
+						a.product__price(href="#") 
+							p.product__old-price 1 900
+								span.rubl a
+							| 1 600
+							span.rubl a
+						a.product__cart(href="#")
+				.catalog__under-text.text-center
+					a.cart__show-more(href="#") Показать еще
+		.product__section._gray
+			h2.subtitle Сейчас купили
+			.product__list
+				ul.medium-slider
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product1.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 1 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 5 часов назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product1.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 1 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 5 часов назад
+					li.medium-slider__item
+						.product__block
+							.product__image-wrap
+								a(href="#")
+									img.product__image(src="img/content/product.jpg", alt="")
+							.product__info
+								p.product__type Игры для ПК
+								h3.product__name Wolfenstein: The Old Blood [PC]
+								a.product__price(href="#") 600
+									span.rubl a
+								a.product__cart(href="#")
+								p.product__time 25 минут назад
+		.advantages__block
+			ul.advantages__list
+				li.advantages__item
+					img.advantages__img(src="img/advantages1.png", alt="")
+					p.advantages__text Индивидуальный подход
+				li.advantages__item
+					img.advantages__img(src="img/advantages2.png", alt="")
+					p.advantages__text Моментальная доставка
+				li.advantages__item
+					img.advantages__img(src="img/advantages3.png", alt="")
+					p.advantages__text Конкурентные цены
+				li.advantages__item
+					img.advantages__img(src="img/advantages4.png", alt="")
+					p.advantages__text Накопительные скидки
+				li.advantages__item
+					img.advantages__img(src="img/advantages5.png", alt="")
+					p.advantages__text Клиенты нас любят
+	.news__section
+		.container-fluid
+			.rss__block
+				h3.rss__title Будьте первыми кто узнает<br>о свежых новостях<br>Crabbs Store!
+				form.rss_form(action="#" method="get")
+					input.univ__input._email(type="email" required placeholder="Введите вашу почту")
+					button.btn._gray-btn(type="submit") Подписатся
+					p.rss__undertext Ваши данные защишены
+			.news__block
+				h2.subtitle._white Новости
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит две новых игры, за покупку топовых видеокарт
+					p.news__date 12 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно The Witcher 3: Wild Hunt или же Batman: Arkham Knight. 
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит
+					p.news__date 22 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно. 

@@ -27,6 +27,7 @@
 		padding: 11px 0 25px 0;
 		border-radius: 6px;
 		margin-bottom: -5px;
+		position: relative;
 		&:after {
 			content: '';
 			display: block;
@@ -191,6 +192,10 @@
 	&__block {
 		position: relative;
 		z-index: 2;
+		vertical-align: top;
+		display: inline-block;
+		width: 30%;
+		margin: 0 0 50px 3%;
 		&._banner {
 			margin: 15% 0 0 47%;
 			vertical-align: top;
@@ -210,6 +215,13 @@
 				&:before {
 					border: 2px solid #fff;
 				}
+			}
+		}
+		&._catalog-set {
+			width: 46%;
+			margin: 30px 7% 20px 0;
+			&:nth-child(2n) {
+				margin-right: 0;
 			}
 		}
 	}
@@ -297,6 +309,7 @@
 		&._gray {
 			background: #f3f2f0;
 			border-radius: 0 0 5px 5px;
+			box-shadow: inset 0px 9px 18px -10px #999;
 		}
 		// стилизация слайдера покупок
 		.bx-prev,
@@ -338,14 +351,18 @@
 		color: #a1a1a1;
 		font-size: 16px;
 		line-height: 20px;
-		margin: 0px;
+		margin: 0px 20px;
 		position: relative;
+		&:last-child {
+			margin-right: 0;
+		}
 		&._product {
 			border-bottom: 1px solid transparent;
 			color: #000;
 			font-size: 13px;
 			padding-top: 1px;
 			font-weight: 500;
+			margin: 0;
 		}
 		&:hover {
 			border-bottom: 1px solid transparent;
@@ -366,11 +383,6 @@
 	}
 	&__list {
 		margin-left: -2%;
-	}
-	&__block {
-		display: inline-block;
-		width: 30%;
-		margin: 0 0 50px 3%;
 	}
 	&__image-wrap {
 		margin: 0 20px 0 0;
@@ -405,18 +417,6 @@
 		height: 16px;
 		background: url(../img/main_sprite.png) -113px -32px no-repeat;
 		margin-left: 15px;
-		-webkit-transition: all 0.4s ease;
-		-moz-transition: all 0.4s ease;
-		-ms-transition: all 0.4s ease;
-		-o-transition: all 0.4s ease;
-		transition: all 0.4s ease;
-		&:hover {
-			// -moz-transform: rotate(360deg);
-			// -webkit-transform: rotate(360deg);
-			// -o-transform: rotate(360deg);
-			// -ms-transform: rotate(360deg);
-			// transform: rotate(360deg);
-		}
 	}
 	&__time {
 		color: #d84645;
@@ -617,7 +617,7 @@
 	font-weight: 300;
 	font-size: 27px;
 	padding: 0 0 17px 10px;
-	border-bottom: 2px solid #faf9f7;
+	border-bottom: 2px solid #eae9e8;
 	&._white {
 		color: #fff;
 		border-bottom: none;
@@ -697,7 +697,7 @@
 		background: #373737;
 		padding: 8px 0 50px 0;
 		margin: 13px 0 0 0;
-		height: 302px;
+		// height: 302px;
 	    box-sizing: border-box;
 	}
 	&__block {
@@ -780,13 +780,17 @@
 .rss {
 	&__block {
 		width: 32%;
-		height: 302px;
+		// height: 302px;
 		background: #ea9b00 url(../img/rss_bg.png) bottom right no-repeat;
 		float: right;
 		display: inline-block;
 		margin: -8px 0 0 0;
 		padding: 45px 35px 26px 35px;
 		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: -50px;
 	}
 	&__title {
 		color: #fff;
@@ -952,6 +956,7 @@
 	}
 	&__list {
 		padding: 0;
+		margin-bottom: 0;
 	}
 	&__item {
 		margin-right: 10px;
@@ -1366,6 +1371,7 @@
 			transition: all 1s ease;
 		}
 		&:hover {
+			border-bottom: 2px solid transparent;
 			&:before {
 				-moz-transform: rotate(360deg);
 				-webkit-transform: rotate(360deg);
@@ -1616,6 +1622,10 @@
 			color: @orange;
 		}
 	}
+	&__pay-img {
+		padding: 0 15px;
+		box-sizing: border-box;
+	}
 }
 // страница отзывов
 .feedback {
@@ -1805,6 +1815,7 @@
 		display: inline-block;
 		margin: 0 19px 0 86px;
 		vertical-align: top;
+		min-height: 65px;
 	}
 	&__price {
 		color: #fff;
@@ -1823,5 +1834,220 @@
 		position: relative;
 		text-decoration: line-through;
 		top: -5px;
+	}
+}
+// сайтбар в каталоге
+.sidebar {
+	&__section {
+		float: left;
+		margin: -11px 0 0 0;
+		width: 306px;
+	}
+	&__block {
+		box-sizing: border-box;
+		padding: 12px 28px 31px 28px;
+		border-bottom: 4px solid #fff;
+		&._block-yellow {
+			background: #ec9c00;
+		}
+		&._block-dark-gray {
+			background: #ceccbd;
+			padding: 7px 28px 23px 28px;
+		}
+		&._block-light-gray {
+			background: #f1f1f1;
+			padding: 7px 28px 14px 28px;
+		}
+		&._block-middle-gray {
+			background: #ece9e2;
+		}
+
+	}
+	&__title {
+		font-size: 22px;
+		font-weight: 300;
+		margin: 0 0 4px 0;
+	    padding: 10px 0 12px 0;
+		color: #000;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: 0;
+			left: 0;
+			background: #bdbbad;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			width: 42px;
+			height: 1px;
+			bottom: 0;
+			left: 0;
+			background: #afaea1;
+		}
+		&._white {
+			color: #fff;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 1px;
+				bottom: 0;
+				left: 0;
+				background: #f1b746;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 42px;
+				height: 1px;
+				bottom: 0;
+				left: 0;
+				background: #f5cd7d;
+			}
+		}
+		&._no-border {
+			margin-bottom: 10px;
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+	}
+	&__filter-inner-block {
+		margin: 14px 0 0 0;
+	}
+	&__filter-text {
+		font-weight: 300;
+		display: inline-block;
+		margin-right: 7px;
+		&._white {
+			color: #fff;
+		}
+	}
+	&__price-filter-input {
+		margin-right: 8px;
+		border: none;
+		background: #f1e8d7;
+		width: 64px;
+		height: 29px;
+		border-radius: 3px;
+		text-align: center;
+		font-weight: 300;
+		box-sizing: border-box;
+		padding: 0 10px;
+		box-shadow: 1px 1px 0 #cf8900;
+		&#inp_max {
+			margin-right: 5px;
+		}
+	}
+	&__price-filter-currency {
+		font-size: 18px;
+		color: #fff;
+	}
+	&__price-range {
+		border-radius: 3px;
+		margin-top: 18px;
+		background: rgba(0, 0, 0, 0.64);
+		width: 96%;
+	}
+	&__filter-label {
+		margin-bottom: 9px;
+		display: block;
+		font-size: 15px;
+		font-weight: 300;
+		position: relative;
+		cursor: pointer;
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../img/main_sprite.png) 0 0 no-repeat;
+			width: 15px;
+			height: 15px;
+			top: 0;
+			left: 24px;
+		}
+		&._new {
+			&:before {
+				background-position: -193px 0px;
+			}
+		}
+		&._best {
+			&:before {
+				background-position: -281px 0px;
+			}
+		}
+		&._sale {
+			&:before {
+				background-position: -253px 0px;
+			}
+		}
+		&._pre-order {
+			&:before {
+				background-position: -223px -1px;
+
+			}
+		}
+		&._sizeL {
+			font-size: 22px;
+			margin-top: 14px;
+			padding-bottom: 16px;
+			border-bottom: 1px solid #d9d6cf;
+			&:before {
+			  width: 20px;
+			  height: 20px;
+			  top: 3px;
+			  left: 42px;
+			}
+			&._type-pc {
+				&:before {
+					background-position: 0px 0px;
+				}
+			}
+			&._type-ps {
+				&:before {
+					background-position: -38px 0;				
+				}
+			}
+			&._type-xbox {
+				&:before {
+					background-position: -83px 1px;			
+				}
+			}
+		}
+		&._gray {
+			color: #67715f;
+			text-decoration: underline;
+			margin-bottom: 12px;
+			&:hover {
+				text-decoration: none;
+			}
+			&:before{
+				display: none;
+			}
+		}
+	}
+}
+// секция каталога
+.catalog {
+	&__section {
+		margin-left: 338px;
+		padding-right: 40px;
+		.title {
+			padding-left: 0;
+		}
+		.breadcrumps__block {
+			margin: 0;
+		}
+	}
+	&__under-text {
+		border-top: 1px solid #f1f1f1;
+		margin-top: 30px;
+		.cart__show-more {
+			margin: 20px 0 4px 0;
+		}
 	}
 }
