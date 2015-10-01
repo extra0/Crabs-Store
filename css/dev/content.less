@@ -19,6 +19,32 @@
 		margin: 0 auto;
 		text-align: center;
 	}
+	//  парящий объект
+	&__levitation {
+		position: absolute;
+	    z-index: 2;
+	    max-width: 230px;
+	    top: 240px;
+	    left: -30px;
+    	-webkit-animation: levitation 3s infinite ease-in-out alternate-reverse; 
+        animation: levitation 3s infinite ease-in-out alternate-reverse;
+    	@-webkit-keyframes levitation {
+    		0% {
+    			top: 240px;
+    		}
+    		100% {
+    			top: 150px;
+    		}
+    	}
+    	@keyframes levitation {
+    		0% {
+    			top: 240px;
+    		}
+    		100% {
+    			top: 150px;
+    		}
+    	}
+	}
 }
 // блок слайдера
 .main {
