@@ -19,7 +19,10 @@ header.header
 				li.header__menu-item
 					a.header__menu-link(href="#") Партнерская программа
 		.header__info-block
-			a.header__cabinet-link.fancy(href="#enter") Личный кабинет
+			a.header__enter-link.fancy(href="#enter") Вход
+			//- a.header__cabinet-link(href="#") Личный кабинет
+			// если корзина заполнена то меняем на тег А и дописываем класс ._full
+			span.header__cart(href="#") Корзина пуста
 			a.header__logo(href="/")
 				img(src="img/logo.png" alt="Site Logo")
 			.header__platform

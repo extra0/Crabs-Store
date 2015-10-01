@@ -48,7 +48,8 @@
               <li class="header__menu-item"><a href="#" class="header__menu-link">Партнерская программа</a></li>
             </ul>
           </div>
-          <div class="header__info-block"><a href="#enter" class="header__cabinet-link fancy">Личный кабинет</a><a href="/" class="header__logo"><img src="img/logo.png" alt="Site Logo"></a>
+          <div class="header__info-block"><a href="#enter" class="header__enter-link fancy">Вход</a>
+            <!-- если корзина заполнена то меняем на тег А и дописываем класс ._full--><span href="#" class="header__cart">Корзина пуста</span><a href="/" class="header__logo"><img src="img/logo.png" alt="Site Logo"></a>
             <div class="header__platform"><a href="#" class="header__platform-type _pc">Игры для ПК</a><a href="#" class="header__platform-type _ps">PlayStation</a><a href="#" class="header__platform-type _xb">Xbox</a></div>
             <div class="header__search">
               <form action="#" method="get" class="header__search-form">
@@ -126,6 +127,8 @@
             <h3 class="subtitle">Добавить отзыв</h3>
             <form action="#" method="pos" class="feedback__form">
               <div class="feedback__form-section _widthS">
+                <label for="login" class="feedback__input-icon _login"></label>
+                <input id="login" type="text" required placeholder="Имя/Ник" class="feedback__input">
                 <label for="number" class="feedback__input-icon _number"></label>
                 <input id="number" type="text" required placeholder="Номер заказа" class="feedback__input">
                 <label for="email" class="feedback__input-icon _email"></label>

@@ -65,6 +65,8 @@ block content
 				h3.subtitle Добавить отзыв
 				form.feedback__form(action="#" method="pos")
 					.feedback__form-section._widthS
+						label(for="login").feedback__input-icon._login
+						input.feedback__input#login(type="text" required placeholder="Имя/Ник")
 						label(for="number").feedback__input-icon._number
 						input.feedback__input#number(type="text" required placeholder="Номер заказа")
 						label(for="email").feedback__input-icon._email

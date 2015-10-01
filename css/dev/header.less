@@ -52,7 +52,32 @@
 		box-sizing: border-box;
 		padding: 18px 32px;
 	}
+	// корзина 
+	&__cart {
+		margin: 8px 46px 0px 0;
+		float: right;
+		position: relative;
+		display: inline-block;
+		line-height: 14px;
+		color: #000;
+		&._full {
+			border-bottom: 1px solid #878787;
+			&:hover {
+				border-bottom: 1px solid transparent;
+			}
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../img/cart.jpg) 0 0 no-repeat;
+			width: 19px;
+			height: 19px;
+			top: -1px;
+			left: -26px;
+		}
+	}
 	// ссылка личного кабинета
+	&__enter-link,
 	&__cabinet-link {
 		float: right;
 		color: #000;
@@ -74,6 +99,9 @@
 			top: -3px;
             left: -28px;
 		}
+	}
+	&__enter-link {
+		border-bottom: 1px dotted #878787;
 	}
 	// блок ссылок с типами платформ
 	&__platform {
@@ -117,7 +145,7 @@
 		display: inline-block;
 		margin: 0 0 0 -16px;
 		position: relative;
-		width: 39.7%;
+		width: 26.7%;
 		vertical-align: top;	
 	}
 	&__search-input {
@@ -149,9 +177,12 @@
 	&__alphabet {
 		background: #ece9e2;
 		border-radius: 0 0 6px 6px;
-		padding: 10px;
+		padding: 10px 19px;
 		box-sizing: border-box;
 		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 		&._no-bg {
 			border-radius: 0;
 		}
@@ -160,7 +191,7 @@
 		display: inline-block;
 		text-transform: uppercase;
 		color: #000;
-		padding: 0 16px;
+		padding: 0 16px 0 10px;
 		line-height: 21px;
 		position: relative;
 		border-right: 1px solid #dcd9d3;
