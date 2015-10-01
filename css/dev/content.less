@@ -1644,6 +1644,20 @@
 		margin: 0 4% 40px 0;
 		display: inline-block;
 		vertical-align: top;
+		&._news-block {
+			width: 96%;
+			padding: 0 0 45px;
+		    border-bottom: 1px solid #ece9e2;
+		    .feedback__text {
+		    	&:before {
+		    		display: none;
+		    	}
+		    }
+		    &:last-child {
+		    	border-bottom: none;
+		    	padding-bottom: 0;
+		    }
+		}
 	}
 	&__info {
 		margin-left: 157px;
