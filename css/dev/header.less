@@ -109,13 +109,21 @@
 		vertical-align: top;
 		margin: 8px 0 0 5.3%;
 	}
+	&__platform-list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	&__platform-item {
+		margin-right: 58px;
+		display: inline-block;
+	}
 	&__platform-type {
 		position: relative;
 		display: inline-block;
 		line-height: 16px;
 		border-bottom: 1px dotted #000;
 		color: #000;
-		margin-right: 58px;
 		font-family: 'MyriadPro Regular';
 		&:hover {
 			border-bottom: 1px solid transparent;
@@ -161,7 +169,7 @@
 		-o-transition: all 0.4s ease;
 		transition: all 0.4s ease;
 		&:focus {
-			box-shadow: 0px 0px 17px -8px #999;
+			border: 1px solid @orange;
 		}
 	}
 	&__search-submit {
@@ -180,9 +188,6 @@
 		padding: 10px 19px;
 		box-sizing: border-box;
 		text-align: center;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
 		&._no-bg {
 			border-radius: 0;
 		}
@@ -191,7 +196,7 @@
 		display: inline-block;
 		text-transform: uppercase;
 		color: #000;
-		padding: 0 16px 0 10px;
+		padding: 3px 16px;
 		line-height: 21px;
 		position: relative;
 		border-right: 1px solid #dcd9d3;
@@ -202,9 +207,26 @@
 		transition: all 0.4s ease;
 		&:hover {
 			border-bottom: none;
+			border-radius: 4px;
+			background: #d0cfcb;
 		}
 		&:last-child {
 			border-right: none;
 		}
+	}
+	// лист с жанрами
+	&__platform-genre-list {
+		padding: 0;
+		margin: 0;
+		display: none;
+		list-style-type: none;
+	}
+	&__platform-genre-item {
+		margin-bottom: 10px;
+	}
+	&__platform-genre-link {
+		color: #67715f;
+		font-size: 13px;
+		font-weight: 300;
 	}
 }

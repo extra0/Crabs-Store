@@ -67,8 +67,8 @@ $(document).ready(function(){
 			.appendTo(this)
 			.animate({
 				opacity: 0.5,
-				marginTop: $('.header__cabinet-link').offset().top - $(this).children('img').offset().top,
-				marginLeft: $('.header__cabinet-link').offset().left - $(this).children('img').offset().left,
+				marginTop: $('.header__cart').offset().top - $(this).children('img').offset().top,
+				marginLeft: $('.header__cart').offset().left - $(this).children('img').offset().left,
 				width: 70,
 				height: 70
 			}, 860, function() {

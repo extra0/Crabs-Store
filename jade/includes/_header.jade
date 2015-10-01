@@ -26,9 +26,13 @@ header.header
 			a.header__logo(href="/")
 				img(src="img/logo.png" alt="Site Logo")
 			.header__platform
-				a.header__platform-type._pc(href="#") Игры для ПК
-				a.header__platform-type._ps(href="#") PlayStation
-				a.header__platform-type._xb(href="#") Xbox
+				ul.header__platform-list
+					li.header__platform-item
+						a.header__platform-type._pc(href="#") Игры для ПК
+					li.header__platform-item
+						a.header__platform-type._ps(href="#") PlayStation
+					li.header__platform-item
+						a.header__platform-type._xb(href="#") Xbox
 			.header__search
 				form.header__search-form(action="#" method="get")
 					input.header__search-input(type="search" required placeholder="Введите запрос для поиска")
