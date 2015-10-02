@@ -1,0 +1,122 @@
+extends _layout
+block content
+	.container-fluid
+		a.game__link(href="#")
+			.game__name-block
+				img.game__name-img(src="img/game_name.png", alt="")
+		.main__content
+			.breadcrumps__block
+				ul.breadcrumps__list.list-inline
+					li.breadcrumps__item
+						a.breadcrumps__link(href="#") Главная страница
+					li.breadcrumps__item
+						p.breadcrumps__current Корзина
+			h1.title Корзина
+			form.cart__form(action="#" method="post")
+				table.cart__table
+					tbody
+						tr.cart__line
+							th.cart__title._product Товары
+							th.cart__title._price Цена
+							th.cart__title._num Количество
+							th.cart__title._total-price Сумма
+							th.cart__title._action
+						tr.cart__line
+							td.cart__item._border
+								a.cart__link(href="#")
+									img.cart__image._sizeL(src="img/content/game1.jpg", alt="")
+								.cart__item-inner._marg
+									p.cart__console Игры для ПК
+									p.cart__game-name Metal Gear Solid V: The Phantom Pain
+							td.cart__item._border
+								p.cart__old-price 1250
+									span.rubl a
+								p.cart__current-price._price(data-val="830") 830
+									span.rubl a
+							td.cart__item._border
+								.cart__counter-wrap
+									button.cart__counter._minus(type="button" data-val="-1")
+									input.cart__input-counts(type="text" value="1" data-min-val="1" readonly)
+									button.cart__counter._plus(type="button" data-val="1")
+							td.cart__item._border
+								p.cart__current-price._total-product-price(data-total="830") 830
+								span.rubl a
+							td.cart__item
+								a.cart__close(href="#")
+						tr.cart__line
+							td.cart__item._border
+								a.cart__link(href="#")
+									img.cart__image._sizeL(src="img/content/game1.jpg", alt="")
+								.cart__item-inner._marg
+									p.cart__console Игры для ПК
+									p.cart__game-name Metal Gear Solid V: The Phantom Pain
+							td.cart__item._border
+								p.cart__old-price 1250
+									span.rubl a
+								p.cart__current-price._price(data-val="830") 830
+									span.rubl a
+							td.cart__item._border
+								.cart__counter-wrap
+									button.cart__counter._minus(type="button" data-val="-1")
+									input.cart__input-counts(type="text" value="1" data-min-val="1" readonly)
+									button.cart__counter._plus(type="button" data-val="1")
+							td.cart__item._border
+								p.cart__current-price._total-product-price(data-total="830") 830
+								span.rubl a
+							td.cart__item
+								a.cart__close(href="#")
+				.cart__table-footer
+					.cart__total-block._unlogin
+						span.cart__total-text Итого к оплате:
+						p.cart__total-price 830
+						span.rubl a
+					a.cart__catalog-back(href="#") Вернутся в каталог
+					.cart__promo-block
+						label.cart__promo-label(for="promo")
+						input.cart__promo-input#promo(type="text" placeholder="Введите промо-код" data-discount="2")
+						button.cart__promo-submit(type="button")
+					button.cart__checkout.hide(type="submit") Оформить заказ
+				.unlogin__block
+					p.unlogin__block-text
+						| Для оформления заказа вам нужно 
+						a.unlogin__block-link.fancy(href="#enter") войти на сайт
+						| .
+			.text-center._marg
+				img.cart__pay-img(src="img/table_pay.png", alt="")
+		.advantages__block
+			ul.advantages__list
+				li.advantages__item
+					img.advantages__img(src="img/advantages1.png", alt="")
+					p.advantages__text Индивидуальный подход
+				li.advantages__item
+					img.advantages__img(src="img/advantages2.png", alt="")
+					p.advantages__text Моментальная доставка
+				li.advantages__item
+					img.advantages__img(src="img/advantages3.png", alt="")
+					p.advantages__text Конкурентные цены
+				li.advantages__item
+					img.advantages__img(src="img/advantages4.png", alt="")
+					p.advantages__text Накопительные скидки
+				li.advantages__item
+					img.advantages__img(src="img/advantages5.png", alt="")
+					p.advantages__text Клиенты нас любят
+	.news__section
+		.container-fluid
+			.rss__block
+				h3.rss__title Будьте первыми кто узнает<br>о свежых новостях<br>Crabbs Store!
+				form.rss_form(action="#" method="get")
+					input.univ__input._email(type="email" required placeholder="Введите вашу почту")
+					button.btn._gray-btn(type="submit") Подписатся
+					p.rss__undertext Ваши данные защишены
+			.news__block
+				h2.subtitle._white Новости
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит две новых игры, за покупку топовых видеокарт
+					p.news__date 12 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно The Witcher 3: Wild Hunt или же Batman: Arkham Knight. 
+				.news__item
+					h3.news__title
+						a.news__link(href="#") Nvidia предложит
+					p.news__date 22 Января 2015
+					p.news__text Nvidia предложит покупателям новых видеокарт две бесплатные копии новых игр, а именно. 

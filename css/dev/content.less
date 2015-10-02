@@ -1541,6 +1541,7 @@
 		width: 100%;
 		padding: 0 44px 0 60px;
 		height: 38px;
+		border: 1px solid transparent;
 		border: none;
 		border-radius: 35px;
 		-webkit-transition: all 0.4s ease;
@@ -1549,7 +1550,7 @@
 		-o-transition: all 0.4s ease;
 		transition: all 0.4s ease;
 		&:focus {
-			box-shadow: 0 0 8px -3px #000;
+			border: 1px solid @orange;
 		}
 	}
 	&__promo-submit {
@@ -1634,6 +1635,9 @@
 			content: '';
 			display: block;
 			clear: both;
+		}
+		&._unlogin {
+			margin-bottom: -36px;
 		}
 	}
 	&__total-text {
@@ -2101,6 +2105,25 @@
 		margin-top: 30px;
 		.cart__show-more {
 			margin: 20px 0 4px 0;
+		}
+	}
+}
+// блок незалогиненого клиента в корзине
+.unlogin {
+	&__block {
+		padding-left: 4%;
+		margin-bottom: -12px;
+	}
+	&__block-text {
+		font-size: 24px;
+		margin: 0;
+	}
+	&__block-link {
+		color: @orange;
+		display: inline-block;
+		border-bottom: 1px dashed @orange;
+		&:hover {
+			border-bottom: 1px solid transparent;
 		}
 	}
 }
