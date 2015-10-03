@@ -2011,6 +2011,11 @@
 		background: rgba(0, 0, 0, 0.64);
 		width: 96%;
 	}
+	&__filter-img {
+		position: absolute;
+		top: 5px;
+		left: 40px;
+	}
 	&__filter-label {
 		margin-bottom: 9px;
 		display: block;
@@ -2054,25 +2059,11 @@
 			padding-bottom: 16px;
 			border-bottom: 1px solid #d9d6cf;
 			&:before {
+			  display: none;
 			  width: 20px;
 			  height: 20px;
 			  top: 3px;
 			  left: 42px;
-			}
-			&._type-pc {
-				&:before {
-					background-position: 0px 0px;
-				}
-			}
-			&._type-ps {
-				&:before {
-					background-position: -38px 0;				
-				}
-			}
-			&._type-xbox {
-				&:before {
-					background-position: -83px 1px;			
-				}
 			}
 		}
 		&._gray {

@@ -128,25 +128,11 @@
 		&:hover {
 			border-bottom: 1px solid transparent;
 		}
-		&:before {
-			content: '';
-			position: absolute;
-			background: url(../img/main_sprite.png) 0 0 no-repeat;
-			width: 20px;
-			height: 20px;
-			top: 0px;
-			left: -25px;
-		}
-		&._pc:before {
-			background-position: 0 0;
-		}
-		&._ps:before {
-			background-position: -38px 0px;
-		}
-		&._xb:before {
-			background-position: -83px 1px;
-			top: 0px;
-		}
+	}
+	&__platform-img {
+		margin: 0px 9px 0 -9px;
+		position: relative;
+		top: 2px;
 	}
 	// блок поиска в хедере
 	&__search {
